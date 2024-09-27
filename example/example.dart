@@ -20,11 +20,14 @@ void main() async {
   const flowery = Flowery();
 
   // Convert the given text.
-  final audio = await flowery.tts(text: paragraph, voice: 'Anna');
+  final voice = await flowery.voices();
 
-  // Convert the raw audio output as an audio file.
-  final file = File('audio.mp3')..writeAsBytesSync(audio);
+  print(voice);
+  // final audio = await flowery.tts(text: paragraph, voice: 'Anna');
 
-  // ignore: avoid_print
-  print('Saved audio file at "${file.absolute.path}".');
+  // // Convert the raw audio output as an audio file.
+  // final file = File('audio.mp3')..writeAsBytesSync(audio);
+
+  // // ignore: avoid_print
+  // print('Saved audio file at "${file.absolute.path}".');
 }
